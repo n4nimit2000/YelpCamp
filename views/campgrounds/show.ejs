@@ -1,0 +1,38 @@
+<%- include('../partials/header') -%>
+
+<div class="container show">
+    <div>
+        <h2><%= camp.name%> </h2>
+
+        <img src="<%= camp.url%>" class="img-fluid img-thumbnail">
+
+        <div class="container">
+            <p ><%= camp.description%></p>
+            <p><em>By <%= camp.author.username%></em></p>
+    
+            <%if(currentUser && currentUser._id.equals(camp.author.id)){%>
+                <a href="/campgrounds/<%=camp._id%>/edit" class="btn btn-warning btn-xs">Edit</a>
+
+                <form class='form-inline' action='/campgrounds/<%=camp._id%>?_method=DELETE' method="POST">
+                    <button class='btn btn-danger btn-xs'>Delete</button>
+                </form>
+            <%}%>
+
+            <a href="/campgrounds/<%=camp._id%>/comments/new" class="btn btn-success btn-com">Add a new comment</a>
+            <hr>
+            <div>
+                <% camp.comments.forEach(function(comment){ %>
+                    <p>
+                        <strong><%= comment.author.username%> </strong> - <%=comment.text%>
+                    </p>
+                <% }) %>
+            </div>
+
+            <a href="/campgrounds" class="btn btn-primary">Go back</a>
+        </div>
+
+    </div>
+
+</div>
+
+<%- include('../partials/footer') -%>

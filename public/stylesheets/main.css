@@ -1,0 +1,30 @@
+nav{
+    margin-bottom: 1%;
+}
+.navbar-nav
+{
+    padding-left:78%;
+}
+.show{
+    padding-left: 15%;
+    padding-right: 15%; 
+}
+.img-fluid{
+    width: 100%;
+    height: auto;
+}
+.btn-com{
+    margin-left: 70%;
+}
+textarea{
+    width:100%;
+    height: 80px;
+    padding-left: 0%;
+}
+.form-inline{
+    display: inline;
+}
+.img-disp{
+    width: 250px;
+    height: 200px;
+}
